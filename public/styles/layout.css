@@ -18,10 +18,20 @@ body {
 .top-header {
     display: grid;
     gap: 10%;
-    grid-template-columns: 0.5fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
-.top-header
+.top-header-mid {
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+}
+
+.top-header-right {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
 
 .bottom-header {
     display: flex;
