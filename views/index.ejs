@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
+    <title>Tech Tonic Tunes</title>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item header">
+            <div class="top-header"> 
+                <div class="top-header-left">
+                    <img src="/images/logo.png" alt="NO IMG" height="50%">
+
+                </div>
+                <div class="top-header-mid">
+                    <a class="top-link" href="">Latest Blogs</a>
+                    <a class="top-link" href="">About</a>
+                    <a class="top-link" href="">Contact</a>
+                </div>
+                <div class="top-header-right">
+                    <a class="top-link">LOGIN</a>
+                    <a class="top-link">SIGN UP</a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <h1 id="welcome-text">Tech-Tonic Tunes</h1>
+                <h4 id="welcome-text-subheader">Home Of Tech Melodies</h4>
+            </div>
+        </div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+    </div>
+   
+    <h1>This are all the melodious articles available at Tech-Tonic Tunes</h1>
+
+
+    <% if (locals.allPosts) { %>
+        <% locals.allPosts.forEach(function(element) { %>
+            <h3>Author: <%= element.author %></h3>
+            <h2> Title: <%= element.title %></h2>
+            <p> <%= element.article  %></p>
+        <% }); %>
+    <% } %>
+    
+    <form action="/submit" method="POST">
+        <input type="text" name="author" placeholder="Your Name">
+        <input type="text" name="title" placeholder="The Title of your Article">
+        <input type="text" name="article" placeholder="Write your article here">
+        <input type="submit" value="OK">
+    </form>
+</body>
+</html>
